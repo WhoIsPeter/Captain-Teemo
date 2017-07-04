@@ -1,0 +1,31 @@
+{
+  "name": "captain-teemo",
+  "version": "1.0.0",
+  "description": "League of legends Discord bot",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WhoIsPeter/Captain-Teemo.git"
+  },
+  "keywords": [
+    "Discord",
+    "Bot"
+  ],
+  "author": "Peter Pan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WhoIsPeter/Captain-Teemo/issues"
+  },
+  "homepage": "https://github.com/WhoIsPeter/Captain-Teemo#readme",
+  "dependencies": {
+    "discord.js": "^11.1.0",
+    "discord.js-commando": "^0.9.0"
+  },
+  "engines": {
+    "node": "8.0.0",
+    "npm": "5.0.0"
+  }
+}
