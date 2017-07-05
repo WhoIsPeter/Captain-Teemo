@@ -14,12 +14,17 @@ class RandomChampCommand extends Commando.Command {
         let URL = `https://la1.api.riotgames.com/lol/static-data/v3/champions?locale=es_MX&dataById=false&api_key=${process.env.RIOT_API_KEY}`;
         let champions = [];
         request(URL, async (error, response, body) => {
-            let parsed = JSON.parse(body);
-            for(let element in parsed.data) {
-                champions.push(parsed.data[element].name);
-            }
+            if(!error && response.statusCode == 200) {
+                let parsed = JSON.parse(body);
+                for(let element in parsed.data) {
+                    champions.push(parsed.data[element].name);
+                }
             let index = Math.floor(Math.random() * 135);
             message.reply(champions[index]);
+            } else {
+                console.log(error);
+                console.log(response);
+            }
         });
     }
 }
