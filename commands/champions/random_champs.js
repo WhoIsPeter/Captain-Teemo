@@ -7,7 +7,8 @@ class RandomChampsCommand extends Commando.Command {
             name: "randomchamps",
             group: "champion",
             memberName: "randomchamps",
-            description: "Gives everyone in the voice channel a random champion"
+            description: "Gives everyone in the voice channel a random champion",
+            guildOnly: true
         });
     }
     async run(message, args) {
