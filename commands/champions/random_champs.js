@@ -5,7 +5,7 @@ class RandomChampsCommand extends Commando.Command {
     constructor(client) {
         super(client, {
             name: "randomchamps",
-            group: "champions",
+            group: "champion",
             memberName: "randomchamps",
             description: "Gives everyone in the voice channel a random champion"
         });
