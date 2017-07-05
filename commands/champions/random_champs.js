@@ -20,7 +20,7 @@ class RandomChampsCommand extends Commando.Command {
         let champions = [];
         request(URL, async (error, response, body) => {
             if(!error && response.statusCode == 200) {
-                let parsed = await JSON.parse(body);
+                let parsed = JSON.parse(body);
                 for(let element in parsed.data) {
                     champions.push(parsed.data[element].name);
                 }
