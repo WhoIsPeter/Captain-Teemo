@@ -32,6 +32,7 @@ class RandomChampsCommand extends Commando.Command {
                 }, this);
             } else {
                 console.log(error);
+                console.log(response);
             }
         });
     }
