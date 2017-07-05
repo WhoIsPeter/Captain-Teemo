@@ -25,8 +25,10 @@ class RandomChampsCommand extends Commando.Command {
                     champions.push(parsed.data[element].name);
                 }
                 memberVoiceChannel.members.array().forEach( member => {
-                    let index = Math.floor(Math.random() * 135);
-                    message.channel.send(champions[index], {reply: member});
+                    if(!member.user.bot) {
+                        let index = Math.floor(Math.random() * 135);
+                        message.channel.send(champions[index], {reply: member});
+                    }
                 }, this);
             } else {
                 console.log(error);
