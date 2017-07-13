@@ -34,7 +34,6 @@ class SummonerInfoCommand extends Commando.Command {
             let body = await doRequest(URL);
             let parsed = JSON.parse(body);
             version = parsed[0];
-            // Create RichEmbed
             let embed = new Discord.RichEmbed();
             let icon = `http://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${account.profileIconId}.png`;
             embed.setAuthor(account.name, icon);
