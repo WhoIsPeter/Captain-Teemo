@@ -36,6 +36,13 @@ class SummonerInfoCommand extends Commando.Command {
             version = parsed[0];
             let embed = new Discord.RichEmbed();
             let icon = `http://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${account.profileIconId}.png`;
+
+            // Acquiring summoner's league
+            body = await doRequest("https://la1.api.riotgames.com/lol/league/v3/positions/by-summoner/6012160?api_key=RGAPI-b2fbc25e-9eaf-4d76-aa69-0c260670932a");
+            parsed = JSON.parse(body);
+            console.log(parsed[0].tier);
+            
+            embed.setImage("https://raw.githubusercontent.com/WhoIsPeter/Captain-Teemo/master/Leagues/silver/silver_1.png"); // TERMINAR DE CODEAR ESTA LINEA
             embed.setAuthor(account.name, icon);
             message.channel.send({embed: embed});
         } else {
